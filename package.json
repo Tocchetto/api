@@ -6,7 +6,8 @@
   "author": "Guilherme <tocchettoo@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "nodemon": "^1.19.2"
+    "nodemon": "^1.19.2",
+    "sucrase": "^3.10.1"
   },
   "dependencies": {
     "express": "^4.17.1"
