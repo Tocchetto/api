@@ -6,7 +6,7 @@ Esse repositório contém uma api que pode servir como base para qualquer aplica
 
 As instruções a seguir irão auxiliar a gerar uma cópia deste projeto em um ambiente local, para fins de desenvolvimento e teste.
 
-## Pré-Requisitos
+## Pré-requisitos
 
 O [docker CE](https://docs.docker.com/install/linux/docker-ce/debian/) (Community Edition) foi utilizado para fazer o gerenciamento dos serviços da aplicação, mas nada impede que a instalação do banco de dados, por exemplo, seja feita no host.
 
@@ -14,7 +14,7 @@ Após a intalação do docker CE, uma instancia do postgres é criada como descr
 
 ###### Obs.: A flag -p vai fazer um redirecionamento da porta 5432 do host para o container
 
-###### Obs.2: Durante a criação da instância do postgres pode ser que o container do docker não permaneça rodando após ter sido criado, caso isso aconteça, desabilitar o _apparmor_ deve resolver o problema. [Descrição + Solução do problema](https://stackoverflow.com/questions/57873532/unable-to-start-docker-container-docker-ps-a-status-exited-1)
+###### Obs. 2: Durante a criação da instância do postgres pode ser que o container do docker não permaneça rodando após ter sido criado, caso isso aconteça, desabilitar o _apparmor_ deve resolver o problema. [Descrição + Solução do problema](https://stackoverflow.com/questions/57873532/unable-to-start-docker-container-docker-ps-a-status-exited-1)
 
 O seguinte projeto foi todo desenvolvido utilizando nodejs e o gerenciador de pacotes [yarn](https://yarnpkg.com/lang/en/) foi utilizado para gerenciar as dependências do projeto.
 
