@@ -30,4 +30,4 @@ Para rodar o servidor basta executar o comando `yarn dev`.
 - Sequelize
 - Eslint
 - Prettier
-- Bcryptsjs
+- Bcryptjs
