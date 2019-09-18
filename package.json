@@ -5,6 +5,9 @@
   "repository": "https://github.com/Tocchetto/api.git",
   "author": "Guilherme <tocchettoo@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
   "devDependencies": {
     "nodemon": "^1.19.2",
     "sucrase": "^3.10.1"
