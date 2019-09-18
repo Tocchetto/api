@@ -6,7 +6,7 @@ module.exports = {
   database: 'esporte',
   define: {
     timestamps: true,
-    undersocred: true,
-    undersocredAll: true,
+    underscored: true,
+    underscoredAll: true,
   },
 };
