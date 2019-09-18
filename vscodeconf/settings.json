@@ -1,10 +1,11 @@
 {
   "window.zoomLevel": 0,
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "vscode-icons",
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
   "typescript.suggest.autoImports": false,
   "javascript.suggest.autoImports": false,
+  "prettier.singleQuote": true,
   "emmet.syntaxProfiles": {
     "javascript": "jsx"
   },
@@ -31,5 +32,6 @@
       "autoFix": true
     }
   ],
-  "javascript.updateImportsOnFileMove.enabled": "always"
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "workbench.colorTheme": "Dracula"
 }
