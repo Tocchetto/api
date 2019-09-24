@@ -26,47 +26,75 @@ Para rodar o servidor basta executar o comando `yarn dev`.
 
 Para realizar requisições a partir das migrations disponíveis neste projeto, a existência de um banco que condiga com o nome descrito no arquivo `api/src/config/database.js` ja deve existir (nesse caso o nome do banco é _esporte_), após isso, basta rodar o comando `yarn sequelize db:migrate` que irá criar uma tabela no banco a partir das definições disponíveis no arquivo dentro da pasta migrations `src/database/migrations`, que nesse caso, faz referência a uma tabela de usuário genérica.
 
-- **URL**
+------------------------------
 
-  /users
+### /users → `POST`
 
-- **Método:**
+Rota para criação de um usuário, parametros aceitos: _name_, _email_ e _password_:
 
-  `POST`
+- **Parâmetros obrigatórios**
 
-- **Parâmetros - URL**
+  `name=[string]`
+  `email=[string]`
+  `password=[virtual]`
 
-Rota para criação de um usuário, parametros aceitos: _name_, _email_ e _password_.
+- **Opcionais:**
 
-**Required:**
-
-`name=[string]`
-`email=[string]`
-`password=[virtual]`
-
-**Opcionais:**
-
-`NULL`
+  Nenhum parâmetro opcional.
 
 - **Success Response:**
 
   - **Code:** 200 <br />
-    **Content:** `{ "id" : 1, "name": "stringName", "email": "email@mail.com", "provider": false}`
+  - **Content:** `{ "id" : 1, "name": "stringName", "email": "email@mail.com", "provider": false}`
 
 - **Error Response:**
 
   - **Code:** 400 BAD REQUEST <br />
-    **Content:** `{ "error": "User already exists." }`
+  - **Content:** `{ "error": "User already exists." }`
 
 - **Chamada de Exemplo:**
 
-  `curl -d '{"name":"Guilherme", "email":"tocchettoo@gmail.com", "email":"guilherme@mail.com", "password": "hardPassword"}' -H "Content-Type: application/json" -X POST http://localhost:3333/users`
+  `curl -d '{"name":"Guilherme", "email":"guilherme@mail.com", "password": "hardPassword"}' -H "Content-Type: application/json" -X POST http://localhost:3333/users`
 
-- **Notes:**
+- **Observações:**
 
   A api no estado atual aceita que sejam passadas qualquer informação além das mencionadas acima, pois atualmente não faz o controle dos dados que estão sendo salvos no banco.
 
-## Dependências
+------
+
+### /sessions → `POST`
+
+Rota para criação de um usuário, parametros aceitos: _name_, _email_ e _password_:
+
+- **Parâmetros obrigatórios**
+
+  `email=[string]`
+  `password=[virtual]`
+
+- **Opcionais:**
+
+  Nenhum parâmetro opcional.
+
+- **Success Response:**
+
+  - **Code:** 200 <br />
+  - **Content:** `{"user": {"id": 1, "name": "stringName", "email": "email@mail.com"}, "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"}`
+
+- **Error Response:**
+
+  - **Code:** 401 UNAUTHORIZED <br />
+  - **Content:** `{ "error": "User not found." }`
+
+  OR
+
+  - **Code:** 401 UNAUTHORIZED <br />
+  - **Content:** `{ "error": "Password does not match." }`
+
+- **Chamada de Exemplo:**
+
+  `curl -d '{"name":"Guilherme", "email":"guilherme@mail.com", "password": "hardPassword"}' -H "Content-Type: application/json" -X POST http://localhost:3333/sessions`
+
+### Dependências
 
 - Express
 - Nodemon
