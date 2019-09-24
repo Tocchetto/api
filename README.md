@@ -22,6 +22,50 @@ Com yarn instalado, basta clonar o repositório localmente `git clone https://gi
 
 Para rodar o servidor basta executar o comando `yarn dev`.
 
+## Rotas
+
+Para realizar requisições a partir das migrations disponíveis neste projeto, a existência de um banco que condiga com o nome descrito no arquivo `api/src/config/database.js` ja deve existir (nesse caso o nome do banco é _esporte_), após isso, basta rodar o comando `yarn sequelize db:migrate` que irá criar uma tabela no banco a partir das definições disponíveis no arquivo dentro da pasta migrations `src/database/migrations`, que nesse caso, faz referência a uma tabela de usuário genérica.
+
+- **URL**
+
+  /users
+
+- **Método:**
+
+  `POST`
+
+- **Parâmetros - URL**
+
+Rota para criação de um usuário, parametros aceitos: _name_, _email_ e _password_.
+
+**Required:**
+
+`name=[string]`
+`email=[string]`
+`password=[virtual]`
+
+**Opcionais:**
+
+`NULL`
+
+- **Success Response:**
+
+  - **Code:** 200 <br />
+    **Content:** `{ "id" : 1, "name": "stringName", "email": "email@mail.com", "provider": false}`
+
+- **Error Response:**
+
+  - **Code:** 400 BAD REQUEST <br />
+    **Content:** `{ "error": "User already exists." }`
+
+- **Chamada de Exemplo:**
+
+  `curl -d '{"name":"Guilherme", "email":"tocchettoo@gmail.com", "email":"guilherme@mail.com", "password": "hardPassword"}' -H "Content-Type: application/json" -X POST http://localhost:3333/users`
+
+- **Notes:**
+
+  A api no estado atual aceita que sejam passadas qualquer informação além das mencionadas acima, pois atualmente não faz o controle dos dados que estão sendo salvos no banco.
+
 ## Dependências
 
 - Express
