@@ -38,10 +38,6 @@ Rota para criação de um usuário, parametros aceitos: _name_, _email_ e _passw
   `email=[string]`
   `password=[virtual]`
 
-- **Opcionais:**
-
-  Nenhum parâmetro opcional.
-
 - **Success Response:**
 
   - **Code:** 200 <br />
@@ -70,10 +66,6 @@ Rota para criação de um usuário, parametros aceitos: _name_, _email_ e _passw
 
   `email=[string]`
   `password=[virtual]`
-
-- **Opcionais:**
-
-  Nenhum parâmetro opcional.
 
 - **Success Response:**
 
